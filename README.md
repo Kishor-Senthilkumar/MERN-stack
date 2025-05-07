@@ -2,40 +2,6 @@
 
 This project is a full-stack application built with React.js for the frontend and Node.js with Express for the backend, utilizing MongoDB as the database. The application allows users to manage team members, including adding new members, viewing all members, and viewing details of individual members.
 
-## Project Structure
-
-```
-react-node-mongo-app
-├── backend
-│   ├── src
-│   │   ├── controllers
-│   │   │   └── memberController.js
-│   │   ├── models
-│   │   │   └── memberModel.js
-│   │   ├── routes
-│   │   │   └── memberRoutes.js
-│   │   └── server.js
-│   ├── package.json
-│   └── README.md
-├── frontend
-│   ├── public
-│   │   └── index.html
-│   ├── src
-│   │   ├── components
-│   │   │   ├── AddMember.js
-│   │   │   ├── Home.js
-│   │   │   ├── MemberDetails.js
-│   │   │   └── ViewMembers.js
-│   │   ├── services
-│   │   │   └── api.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── routes
-│   │       └── AppRoutes.js
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
 
 ## Installation
 
