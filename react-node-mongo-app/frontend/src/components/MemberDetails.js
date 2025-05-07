@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { getMemberById } from '../services/api';
+import '../styles/ViewMembers.css';
 
 const MemberDetails = () => {
     const { id } = useParams();
@@ -11,8 +12,8 @@ const MemberDetails = () => {
     useEffect(() => {
         const fetchMember = async () => {
             try {
-                const response = await axios.get(`/api/members/${id}`);
-                setMember(response.data);
+                const data = await getMemberById(id);
+                setMember(data);
             } catch (err) {
                 setError('Error fetching member details');
             } finally {
@@ -23,21 +24,43 @@ const MemberDetails = () => {
         fetchMember();
     }, [id]);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>{error}</div>;
+    if (loading) return <div className="loading-message">Loading member details...</div>;
+    if (error) return <div className="error-message">{error}</div>;
 
     return (
-        <div>
-            <h1>Member Details</h1>
+        <div className="members-container">
+            <h1 className="members-title">Member Details</h1>
             {member ? (
-                <div>
-                    <h2>{member.name}</h2>
-                    <p>Role: {member.role}</p>
-                    <p>Email: {member.email}</p>
-                    {member.profileImage && <img src={member.profileImage} alt={member.name} />}
+                <div className="member-details">
+                    <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                        <img
+                            src={member.profileImage || 'https://via.placeholder.com/150'}
+                            alt={member.name}
+                            style={{
+                                width: '150px',
+                                height: '150px',
+                                borderRadius: '50%',
+                                objectFit: 'cover',
+                                marginBottom: '15px'
+                            }}
+                        />
+                        <h2>{member.name}</h2>
+                    </div>
+                    <table className="members-table">
+                        <tbody>
+                            <tr>
+                                <th>Role</th>
+                                <td>{member.role}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{member.email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             ) : (
-                <p>No member found</p>
+                <p className="no-members">No member found</p>
             )}
         </div>
     );

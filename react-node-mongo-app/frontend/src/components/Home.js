@@ -1,20 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Home.css';
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to the Team Management App</h1>
-            <h2>Team Name: Awesome Team</h2>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/add-member">Add Member</Link>
-                    </li>
-                    <li>
-                        <Link to="/view-members">View Members</Link>
-                    </li>
-                </ul>
+        <div className="home-container">
+            <h1 className="home-title">Welcome to the Team Management App</h1>
+            <h2 className="home-subtitle">Manage Your Team Members Efficiently</h2>
+            <nav className="nav-menu">
+                <Link to="/add-member" className="nav-link">Add Member</Link>
+                <Link to="/view-members" className="nav-link">View Members</Link>
             </nav>
         </div>
     );

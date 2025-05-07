@@ -12,7 +12,7 @@ const AppRoutes = () => {
                 <Route path="/" exact component={Home} />
                 <Route path="/add-member" component={AddMember} />
                 <Route path="/view-members" component={ViewMembers} />
-                <Route path="/member/:id" component={MemberDetails} />
+                <Route path="/members/:id" component={MemberDetails} />
             </Switch>
         </Router>
     );

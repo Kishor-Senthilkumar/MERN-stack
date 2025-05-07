@@ -1,18 +1,20 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/members';
+const api = axios.create({
+    baseURL: 'http://localhost:5000/api'
+});
 
 export const createMember = async (memberData) => {
-    const response = await axios.post(API_URL, memberData);
+    const response = await api.post('/members', memberData);
     return response.data;
 };
 
 export const getAllMembers = async () => {
-    const response = await axios.get(API_URL);
+    const response = await api.get('/members');
     return response.data;
 };
 
 export const getMemberById = async (id) => {
-    const response = await axios.get(`${API_URL}/${id}`);
+    const response = await api.get(`/members/${id}`);
     return response.data;
 };

@@ -1,3 +1,5 @@
+const Member = require('../models/memberModel');
+
 exports.createMember = async (req, res) => {
     try {
         const newMember = new Member(req.body);

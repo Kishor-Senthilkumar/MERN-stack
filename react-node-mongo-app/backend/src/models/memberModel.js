@@ -14,6 +14,12 @@ const memberSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    registrationNumber: {
+        type: String,
+        required: true,
+        unique: true,
+        match: /^[A-Za-z0-9]+$/  // Alphanumeric validation
+    },
     profileImage: {
         type: String,
         required: false

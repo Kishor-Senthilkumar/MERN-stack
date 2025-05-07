@@ -1,0 +1,124 @@
+.members-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.members-title {
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.members-controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.members-table-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.members-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.members-table th {
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.members-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.members-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.member-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.view-details-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.view-details-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.error-message {
+    color: var(--danger-color);
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.no-members {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-color);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Member Details styles */
+.member-details {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.member-details img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.member-details h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .members-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
